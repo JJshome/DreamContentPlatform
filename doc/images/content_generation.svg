@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="600" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f5f5f5;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="dreamDataGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#3498db;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2980b9;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="aiModelGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#9b59b6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8e44ad;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="outputGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#f1c40f;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f39c12;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="textGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#2ecc71;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#27ae60;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="imageGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#e74c3c;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#c0392b;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="audioGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#1abc9c;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#16a085;stop-opacity:1" />
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="3" />
+      <feOffset dx="2" dy="2" result="offsetblur" />
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.5" />
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+    <style>
+      @keyframes fadeIn {
+        0% { opacity: 0; }
+        100% { opacity: 1; }
+      }
+      @keyframes pulse {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.05); }
+        100% { transform: scale(1); }
+      }
+      @keyframes float {
+        0% { transform: translateY(0px); }
+        50% { transform: translateY(-10px); }
+        100% { transform: translateY(0px); }
+      }
+      @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+      @keyframes dataFlow {
+        0% { stroke-dashoffset: 1000; }
+        100% { stroke-dashoffset: 0; }
+      }
+      .fade-in { animation: fadeIn 1s ease-in-out forwards; }
+      .fade-in-delay-1 { animation: fadeIn 1s ease-in-out 0.5s forwards; opacity: 0; }
+      .fade-in-delay-2 { animation: fadeIn 1s ease-in-out 1s forwards; opacity: 0; }
+      .fade-in-delay-3 { animation: fadeIn 1s ease-in-out 1.5s forwards; opacity: 0; }
+      .fade-in-delay-4 { animation: fadeIn 1s ease-in-out 2s forwards; opacity: 0; }
+      .pulse { animation: pulse 3s infinite ease-in-out; }
+      .float { animation: float 6s infinite ease-in-out; }
+      .spin { animation: spin 20s infinite linear; }
+      .flow { stroke-dasharray: 15, 5; animation: dataFlow 30s infinite linear; }
+      .module { filter: url(#shadow); transition: all 0.3s ease; }
+      .module:hover { transform: translateY(-5px); }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="600" fill="url(#bgGradient)" />
+  
+  <!-- Title -->
+  <text x="400" y="50" font-family="Arial" font-size="24" text-anchor="middle" fill="#2c3e50" font-weight="bold" class="fade-in">
+    AI Dream Content Generation Process
+  </text>
+
+  <!-- Input: Dream Data -->
+  <g transform="translate(200, 150)" class="module fade-in">
+    <rect x="-150" y="-50" width="300" height="100" rx="15" ry="15" fill="url(#dreamDataGradient)" />
+    <text x="0" y="-20" font-family="Arial" font-size="16" text-anchor="middle" fill="white" font-weight="bold">
+      Dream Data Input
+    </text>
+    
+    <!-- Input Elements -->
+    <g transform="translate(-100, 15)">
+      <rect x="-30" y="-15" width="60" height="30" rx="5" ry="5" fill="white" fill-opacity="0.3" />
+      <text x="0" y="5" font-family="Arial" font-size="10" text-anchor="middle" fill="white">EEG Data</text>
+    </g>
+    
+    <g transform="translate(0, 15)">
+      <rect x="-30" y="-15" width="60" height="30" rx="5" ry="5" fill="white" fill-opacity="0.3" />
+      <text x="0" y="5" font-family="Arial" font-size="10" text-anchor="middle" fill="white">EOG Data</text>
+    </g>
+    
+    <g transform="translate(100, 15)">
+      <rect x="-30" y="-15" width="60" height="30" rx="5" ry="5" fill="white" fill-opacity="0.3" />
+      <text x="0" y="5" font-family="Arial" font-size="10" text-anchor="middle" fill="white">Heart Rate</text>
+    </g>
+  </g>
+
+  <!-- Processing: AI Models -->
+  <g transform="translate(400, 300)" class="module fade-in-delay-1">
+    <rect x="-150" y="-100" width="300" height="200" rx="15" ry="15" fill="url(#aiModelGradient)" />
+    <text x="0" y="-70" font-family="Arial" font-size="16" text-anchor="middle" fill="white" font-weight="bold">
+      AI Models
+    </text>
+    
+    <!-- Neuron Network Animation -->
+    <g transform="translate(0, 0)" class="spin">
+      <circle cx="0" cy="0" r="50" fill="none" stroke="white" stroke-width="1" stroke-dasharray="5,5" />
+      
+      <!-- Neurons -->
+      <circle cx="-30" cy="-30" r="6" fill="white" />
+      <circle cx="30" cy="-30" r="6" fill="white" />
+      <circle cx="-30" cy="30" r="6" fill="white" />
+      <circle cx="30" cy="30" r="6" fill="white" />
+      <circle cx="0" cy="0" r="10" fill="white" class="pulse" />
+      
+      <!-- Connections -->
+      <line x1="-30" y1="-30" x2="0" y2="0" stroke="white" stroke-width="1" />
+      <line x1="30" y1="-30" x2="0" y2="0" stroke="white" stroke-width="1" />
+      <line x1="-30" y1="30" x2="0" y2="0" stroke="white" stroke-width="1" />
+      <line x1="30" y1="30" x2="0" y2="0" stroke="white" stroke-width="1" />
+    </g>
+    
+    <!-- AI Model Types -->
+    <g transform="translate(-100, 60)">
+      <text x="0" y="0" font-family="Arial" font-size="12" text-anchor="middle" fill="white">CNN-LSTM</text>
+      <text x="0" y="15" font-family="Arial" font-size="10" text-anchor="middle" fill="white">Dream Analysis</text>
+    </g>
+    
+    <g transform="translate(0, 60)">
+      <text x="0" y="0" font-family="Arial" font-size="12" text-anchor="middle" fill="white">StyleGAN3</text>
+      <text x="0" y="15" font-family="Arial" font-size="10" text-anchor="middle" fill="white">Image Generation</text>
+    </g>
+    
+    <g transform="translate(100, 60)">
+      <text x="0" y="0" font-family="Arial" font-size="12" text-anchor="middle" fill="white">GPT</text>
+      <text x="0" y="15" font-family="Arial" font-size="10" text-anchor="middle" fill="white">Text Generation</text>
+    </g>
+  </g>
+
+  <!-- Output: Dream Content -->
+  <g transform="translate(600, 150)" class="module fade-in-delay-2">
+    <rect x="-150" y="-50" width="300" height="100" rx="15" ry="15" fill="url(#outputGradient)" />
+    <text x="0" y="-20" font-family="Arial" font-size="16" text-anchor="middle" fill="white" font-weight="bold">
+      Dream Content Output
+    </text>
+    
+    <!-- Output Elements -->
+    <g transform="translate(-100, 15)">
+      <rect x="-30" y="-15" width="60" height="30" rx="5" ry="5" fill="white" fill-opacity="0.3" />
+      <text x="0" y="5" font-family="Arial" font-size="10" text-anchor="middle" fill="white">Images</text>
+    </g>
+    
+    <g transform="translate(0, 15)">
+      <rect x="-30" y="-15" width="60" height="30" rx="5" ry="5" fill="white" fill-opacity="0.3" />
+      <text x="0" y="5" font-family="Arial" font-size="10" text-anchor="middle" fill="white">Narratives</text>
+    </g>
+    
+    <g transform="translate(100, 15)">
+      <rect x="-30" y="-15" width="60" height="30" rx="5" ry="5" fill="white" fill-opacity="0.3" />
+      <text x="0" y="5" font-family="Arial" font-size="10" text-anchor="middle" fill="white">Music</text>
+    </g>
+  </g>
+
+  <!-- Process Flow Arrows -->
+  <path d="M200,200 C250,200 250,250 300,250 C350,250 350,300 400,300" stroke="#9b59b6" stroke-width="3" fill="none" class="flow fade-in-delay-1" />
+  <path d="M400,300 C450,300 450,250 500,250 C550,250 550,200 600,200" stroke="#f39c12" stroke-width="3" fill="none" class="flow fade-in-delay-2" />
+
+  <!-- Content Type Examples -->
+  <g transform="translate(600, 450)" class="fade-in-delay-3">
+    <text x="0" y="-80" font-family="Arial" font-size="18" text-anchor="middle" fill="#2c3e50" font-weight="bold">
+      Content Examples
+    </text>
+    
+    <!-- Text Example -->
+    <g transform="translate(-180, 0)" class="module float">
+      <rect x="-70" y="-60" width="140" height="120" rx="10" ry="10" fill="url(#textGradient)" />
+      <text x="0" y="-40" font-family="Arial" font-size="14" text-anchor="middle" fill="white" font-weight="bold">Text</text>
+      
+      <rect x="-50" y="-20" width="100" height="70" rx="5" ry="5" fill="white" fill-opacity="0.2" />
+      <line x1="-40" y1="-10" x2="40" y2="-10" stroke="white" stroke-width="1" />
+      <line x1="-40" y1="0" x2="30" y2="0" stroke="white" stroke-width="1" />
+      <line x1="-40" y1="10" x2="40" y2="10" stroke="white" stroke-width="1" />
+      <line x1="-40" y1="20" x2="20" y2="20" stroke="white" stroke-width="1" />
+      <line x1="-40" y1="30" x2="35" y2="30" stroke="white" stroke-width="1" />
+    </g>
+    
+    <!-- Image Example -->
+    <g transform="translate(0, 0)" class="module float" style="animation-delay: 0.5s">
+      <rect x="-70" y="-60" width="140" height="120" rx="10" ry="10" fill="url(#imageGradient)" />
+      <text x="0" y="-40" font-family="Arial" font-size="14" text-anchor="middle" fill="white" font-weight="bold">Image</text>
+      
+      <rect x="-50" y="-20" width="100" height="70" rx="5" ry="5" fill="white" fill-opacity="0.2" />
+      <circle cx="-20" cy="0" r="15" fill="white" fill-opacity="0.3" />
+      <path d="M-40,30 L-30,20 L-20,25 L0,5 L20,15 L40,0" stroke="white" stroke-width="2" fill="none" />
+      <path d="M-50,40 C-30,20 0,50 50,10" stroke="white" stroke-width="1" fill="none" />
+    </g>
+    
+    <!-- Audio Example -->
+    <g transform="translate(180, 0)" class="module float" style="animation-delay: 1s">
+      <rect x="-70" y="-60" width="140" height="120" rx="10" ry="10" fill="url(#audioGradient)" />
+      <text x="0" y="-40" font-family="Arial" font-size="14" text-anchor="middle" fill="white" font-weight="bold">Audio</text>
+      
+      <rect x="-50" y="-20" width="100" height="70" rx="5" ry="5" fill="white" fill-opacity="0.2" />
+      <path d="M-40,15 L-30,-10 L-20,30 L-10,-15 L0,10 L10,-5 L20,0 L30,20 L40,-10" stroke="white" stroke-width="2" fill="none" />
+      <circle cx="-30" cy="-10" r="3" fill="white" />
+      <circle cx="-10" cy="-15" r="3" fill="white" />
+      <circle cx="10" cy="-5" r="3" fill="white" />
+      <circle cx="40" cy="-10" r="3" fill="white" />
+    </g>
+  </g>
+
+  <!-- User Editing Controls -->
+  <g transform="translate(200, 450)" class="fade-in-delay-4">
+    <text x="0" y="-80" font-family="Arial" font-size="18" text-anchor="middle" fill="#2c3e50" font-weight="bold">
+      User Editing Controls
+    </text>
+    
+    <rect x="-150" y="-60" width="300" height="120" rx="15" ry="15" fill="#ecf0f1" stroke="#bdc3c7" stroke-width="2" />
+    
+    <!-- Sliders -->
+    <g transform="translate(0, -30)">
+      <text x="-130" y="5" font-family="Arial" font-size="12" text-anchor="start" fill="#2c3e50">Content Fidelity</text>
+      <line x1="-20" y1="5" x2="100" y2="5" stroke="#bdc3c7" stroke-width="3" stroke-linecap="round" />
+      <circle cx="30" cy="5" r="8" fill="#3498db" stroke="#2980b9" stroke-width="2" />
+    </g>
+    
+    <g transform="translate(0, 0)">
+      <text x="-130" y="5" font-family="Arial" font-size="12" text-anchor="start" fill="#2c3e50">Creative Liberty</text>
+      <line x1="-20" y1="5" x2="100" y2="5" stroke="#bdc3c7" stroke-width="3" stroke-linecap="round" />
+      <circle cx="60" cy="5" r="8" fill="#3498db" stroke="#2980b9" stroke-width="2" />
+    </g>
+    
+    <g transform="translate(0, 30)">
+      <text x="-130" y="5" font-family="Arial" font-size="12" text-anchor="start" fill="#2c3e50">Emotional Intensity</text>
+      <line x1="-20" y1="5" x2="100" y2="5" stroke="#bdc3c7" stroke-width="3" stroke-linecap="round" />
+      <circle cx="75" cy="5" r="8" fill="#3498db" stroke="#2980b9" stroke-width="2" />
+    </g>
+  </g>
+
+  <!-- Data Flow Indicators -->
+  <g class="fade-in-delay-2">
+    <circle cx="200" cy="200" r="5" fill="#3498db" class="pulse" />
+    <circle cx="400" cy="300" r="5" fill="#9b59b6" class="pulse" />
+    <circle cx="600" cy="200" r="5" fill="#f39c12" class="pulse" />
+  </g>
+</svg>
