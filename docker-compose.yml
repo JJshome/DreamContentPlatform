@@ -1,0 +1,56 @@
+version: '3.8'
+
+services:
+  api:
+    build: .
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./uploads:/app/uploads
+      - ./output:/app/output
+      - ./marketplace_data:/app/marketplace_data
+    env_file:
+      - .env
+    depends_on:
+      - ipfs
+      - ganache
+    networks:
+      - dream-platform-network
+
+  ipfs:
+    image: ipfs/kubo:latest
+    ports:
+      - "5001:5001"  # API
+      - "8080:8080"  # Gateway
+      - "4001:4001"  # Swarm
+    volumes:
+      - ipfs_data:/data/ipfs
+    networks:
+      - dream-platform-network
+
+  ganache:
+    image: trufflesuite/ganache:latest
+    ports:
+      - "8545:8545"
+    command: --deterministic --mnemonic "dream content platform blockchain network for development and testing"
+    networks:
+      - dream-platform-network
+
+  nginx:
+    image: nginx:alpine
+    ports:
+      - "80:80"
+    volumes:
+      - ./deployment/nginx/default.conf:/etc/nginx/conf.d/default.conf
+      - ./output:/usr/share/nginx/html/content
+    depends_on:
+      - api
+    networks:
+      - dream-platform-network
+
+networks:
+  dream-platform-network:
+    driver: bridge
+
+volumes:
+  ipfs_data:
