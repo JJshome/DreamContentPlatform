@@ -2,8 +2,6 @@
 
 A revolutionary platform for capturing, analyzing, transforming, and trading dream content using advanced biometric sensing, artificial intelligence, and blockchain technologies.
 
-<img src="doc/images/system_architecture.svg" alt="System Architecture" width="800" />
-
 ## Overview
 
 The Dream Content Platform is a groundbreaking system that bridges the gap between the subconscious mind and creative expression. By capturing high-resolution biometric data during sleep, the platform employs cutting-edge AI algorithms to analyze dreams and transform them into various forms of digital content, which can then be securely traded on a blockchain-powered marketplace.
