@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="600" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="headerGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#2c3e50;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#34495e;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="dreamCardGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3498db;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2980b9;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="nftGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#9b59b6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8e44ad;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="ethereumGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#27ae60;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2ecc71;stop-opacity:1" />
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="5" />
+      <feOffset dx="3" dy="3" result="offsetblur" />
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.5" />
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="5" />
+      <feOffset dx="0" dy="0" result="offsetblur" />
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.5" />
+      </feComponentTransfer>
+      <feFlood flood-color="#3498db" flood-opacity="0.7" />
+      <feComposite in2="offsetblur" operator="in" />
+      <feMerge>
+        <feMergeNode />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+    <style>
+      @keyframes float {
+        0% { transform: translateY(0px); }
+        50% { transform: translateY(-10px); }
+        100% { transform: translateY(0px); }
+      }
+      @keyframes pulse {
+        0% { transform: scale(1); opacity: 1; }
+        50% { transform: scale(1.05); opacity: 0.8; }
+        100% { transform: scale(1); opacity: 1; }
+      }
+      @keyframes spin {
+        from { transform-origin: center; transform: rotate(0deg); }
+        to { transform-origin: center; transform: rotate(360deg); }
+      }
+      @keyframes sparkle {
+        0% { opacity: 0; }
+        50% { opacity: 1; }
+        100% { opacity: 0; }
+      }
+      @keyframes dash {
+        from { stroke-dashoffset: 1000; }
+        to { stroke-dashoffset: 0; }
+      }
+      .float { animation: float 6s ease-in-out infinite; }
+      .pulse { animation: pulse 4s infinite ease-in-out; }
+      .spin { animation: spin 20s linear infinite; }
+      .sparkle { animation: sparkle 2s infinite ease-in-out; }
+      .dash { stroke-dasharray: 10, 5; animation: dash 30s linear infinite; }
+      .card { filter: url(#shadow); transition: all 0.3s ease; }
+      .card:hover { transform: translateY(-5px); }
+      .glow { filter: url(#glow); }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="600" fill="#ecf0f1" />
+  
+  <!-- Header -->
+  <rect x="0" y="0" width="800" height="80" fill="url(#headerGradient)" />
+  <text x="400" y="50" font-family="Arial" font-size="24" text-anchor="middle" fill="white" font-weight="bold">
+    Dream Content NFT Marketplace
+  </text>
+
+  <!-- Left Panel: Dream NFT Cards -->
+  <g transform="translate(200, 200)">
+    <text x="0" y="-80" font-family="Arial" font-size="20" text-anchor="middle" fill="#2c3e50" font-weight="bold">
+      Dream Content NFTs
+    </text>
+    
+    <!-- Dream Card 1 -->
+    <g transform="translate(-100, 0)" class="card float">
+      <rect x="-60" y="-90" width="120" height="180" rx="10" ry="10" fill="url(#dreamCardGradient)" />
+      
+      <!-- Dream Image -->
+      <rect x="-50" y="-80" width="100" height="100" rx="5" ry="5" fill="#ecf0f1" />
+      <circle cx="-20" cy="-40" r="15" fill="#f1c40f" class="pulse" />
+      <path d="M-50,-30 C-30,-60 0,-20 50,-30" stroke="#3498db" stroke-width="3" fill="none" />
+      <path d="M-50,-10 C-20,-30 20,-10 50,-10" stroke="#27ae60" stroke-width="2" fill="none" />
+      
+      <!-- NFT Details -->
+      <text x="0" y="40" font-family="Arial" font-size="12" text-anchor="middle" fill="white" font-weight="bold">Dream #1034</text>
+      <text x="0" y="60" font-family="Arial" font-size="10" text-anchor="middle" fill="white">Fantasy Landscape</text>
+      <text x="0" y="80" font-family="Arial" font-size="12" text-anchor="middle" fill="#f1c40f" font-weight="bold">0.25 ETH</text>
+    </g>
+    
+    <!-- Dream Card 2 -->
+    <g transform="translate(100, 0)" class="card float" style="animation-delay: 1s;">
+      <rect x="-60" y="-90" width="120" height="180" rx="10" ry="10" fill="url(#dreamCardGradient)" />
+      
+      <!-- Dream Image -->
+      <rect x="-50" y="-80" width="100" height="100" rx="5" ry="5" fill="#ecf0f1" />
+      <path d="M-30,-50 L-20,-30 L0,-60 L20,-20 L40,-40" stroke="#e74c3c" stroke-width="3" fill="none" />
+      <circle cx="10" cy="-30" r="10" fill="#9b59b6" class="pulse" />
+      
+      <!-- NFT Details -->
+      <text x="0" y="40" font-family="Arial" font-size="12" text-anchor="middle" fill="white" font-weight="bold">Dream #982</text>
+      <text x="0" y="60" font-family="Arial" font-size="10" text-anchor="middle" fill="white">Abstract Journey</text>
+      <text x="0" y="80" font-family="Arial" font-size="12" text-anchor="middle" fill="#f1c40f" font-weight="bold">0.18 ETH</text>
+    </g>
+  </g>
+
+  <!-- Right Panel: Blockchain & NFT Info -->
+  <g transform="translate(600, 200)">
+    <text x="0" y="-80" font-family="Arial" font-size="20" text-anchor="middle" fill="#2c3e50" font-weight="bold">
+      Blockchain Technology
+    </text>
+    
+    <!-- Ethereum Symbol -->
+    <g transform="translate(0, 0)" class="pulse">
+      <circle cx="0" cy="0" r="60" fill="url(#ethereumGradient)" filter="url(#shadow)" />
+      <path d="M0,-40 L-35,0 L0,15 L35,0 Z" fill="white" />
+      <path d="M0,15 L-35,0 L0,40 L35,0 Z" fill="white" opacity="0.8" />
+    </g>
+    
+    <!-- NFT Info -->
+    <g transform="translate(0, 100)">
+      <text x="0" y="0" font-family="Arial" font-size="14" text-anchor="middle" fill="#2c3e50" font-weight="bold">
+        NFT Standard: ERC-721
+      </text>
+      <text x="0" y="25" font-family="Arial" font-size="12" text-anchor="middle" fill="#2c3e50">
+        Smart Contract: DreamNFT
+      </text>
+      <text x="0" y="50" font-family="Arial" font-size="12" text-anchor="middle" fill="#2c3e50">
+        Blockchain: Ethereum
+      </text>
+    </g>
+  </g>
+
+  <!-- Center Blockchain Network -->
+  <g transform="translate(400, 380)" class="spin">
+    <circle cx="0" cy="0" r="100" fill="none" stroke="#3498db" stroke-width="1" stroke-dasharray="5,5" />
+    <circle cx="0" cy="0" r="70" fill="none" stroke="#3498db" stroke-width="1" stroke-dasharray="5,5" />
+    
+    <!-- Blockchain Nodes -->
+    <g class="glow">
+      <circle cx="0" cy="-100" r="10" fill="#3498db" />
+      <circle cx="71" cy="-71" r="10" fill="#e74c3c" />
+      <circle cx="100" cy="0" r="10" fill="#f1c40f" />
+      <circle cx="71" cy="71" r="10" fill="#2ecc71" />
+      <circle cx="0" cy="100" r="10" fill="#9b59b6" />
+      <circle cx="-71" cy="71" r="10" fill="#e67e22" />
+      <circle cx="-100" cy="0" r="10" fill="#1abc9c" />
+      <circle cx="-71" cy="-71" r="10" fill="#95a5a6" />
+    </g>
+    
+    <!-- Connection Lines -->
+    <g class="dash">
+      <path d="M0,-100 L71,-71 L100,0 L71,71 L0,100 L-71,71 L-100,0 L-71,-71 L0,-100" stroke="#3498db" stroke-width="2" fill="none" />
+      <path d="M0,-100 L100,0 L0,100 L-100,0 L0,-100" stroke="#3498db" stroke-width="2" fill="none" />
+      <path d="M71,-71 L-71,71" stroke="#3498db" stroke-width="2" fill="none" />
+      <path d="M-71,-71 L71,71" stroke="#3498db" stroke-width="2" fill="none" />
+    </g>
+  </g>
+
+  <!-- Bottom Section: Transaction Process -->
+  <g transform="translate(400, 530)">
+    <rect x="-380" y="-30" width="760" height="60" rx="10" ry="10" fill="url(#headerGradient)" />
+    <text x="0" y="5" font-family="Arial" font-size="16" text-anchor="middle" fill="white" font-weight="bold">
+      Secure NFT Transaction Pipeline
+    </text>
+    
+    <!-- Transaction Pipeline Icons -->
+    <g transform="translate(-300, 0)">
+      <circle cx="0" cy="0" r="15" fill="#3498db" />
+      <text x="0" y="5" font-family="Arial" font-size="14" text-anchor="middle" fill="white" font-weight="bold">1</text>
+      <text x="0" y="25" font-family="Arial" font-size="10" text-anchor="middle" fill="white">Mint</text>
+    </g>
+    
+    <g transform="translate(-150, 0)">
+      <circle cx="0" cy="0" r="15" fill="#3498db" />
+      <text x="0" y="5" font-family="Arial" font-size="14" text-anchor="middle" fill="white" font-weight="bold">2</text>
+      <text x="0" y="25" font-family="Arial" font-size="10" text-anchor="middle" fill="white">List</text>
+    </g>
+    
+    <g transform="translate(0, 0)">
+      <circle cx="0" cy="0" r="15" fill="#3498db" />
+      <text x="0" y="5" font-family="Arial" font-size="14" text-anchor="middle" fill="white" font-weight="bold">3</text>
+      <text x="0" y="25" font-family="Arial" font-size="10" text-anchor="middle" fill="white">Bid</text>
+    </g>
+    
+    <g transform="translate(150, 0)">
+      <circle cx="0" cy="0" r="15" fill="#3498db" />
+      <text x="0" y="5" font-family="Arial" font-size="14" text-anchor="middle" fill="white" font-weight="bold">4</text>
+      <text x="0" y="25" font-family="Arial" font-size="10" text-anchor="middle" fill="white">Transfer</text>
+    </g>
+    
+    <g transform="translate(300, 0)">
+      <circle cx="0" cy="0" r="15" fill="#3498db" />
+      <text x="0" y="5" font-family="Arial" font-size="14" text-anchor="middle" fill="white" font-weight="bold">5</text>
+      <text x="0" y="25" font-family="Arial" font-size="10" text-anchor="middle" fill="white">Royalties</text>
+    </g>
+    
+    <!-- Connection Arrows -->
+    <line x1="-285" y1="0" x2="-165" y2="0" stroke="white" stroke-width="2" stroke-dasharray="5,3" />
+    <line x1="-135" y1="0" x2="-15" y2="0" stroke="white" stroke-width="2" stroke-dasharray="5,3" />
+    <line x1="15" y1="0" x2="135" y2="0" stroke="white" stroke-width="2" stroke-dasharray="5,3" />
+    <line x1="165" y1="0" x2="285" y2="0" stroke="white" stroke-width="2" stroke-dasharray="5,3" />
+  </g>
+
+  <!-- Sparkles -->
+  <g class="sparkle">
+    <circle cx="200" cy="120" r="2" fill="#f1c40f" />
+    <circle cx="240" cy="150" r="3" fill="#f1c40f" />
+    <circle cx="180" cy="180" r="2" fill="#f1c40f" />
+    <circle cx="600" cy="130" r="3" fill="#f1c40f" />
+    <circle cx="550" cy="160" r="2" fill="#f1c40f" />
+    <circle cx="650" cy="190" r="2" fill="#f1c40f" />
+  </g>
+  
+  <g class="sparkle" style="animation-delay: 1s;">
+    <circle cx="100" cy="200" r="2" fill="#f1c40f" />
+    <circle cx="140" cy="230" r="3" fill="#f1c40f" />
+    <circle cx="80" cy="260" r="2" fill="#f1c40f" />
+    <circle cx="700" cy="230" r="3" fill="#f1c40f" />
+    <circle cx="650" cy="260" r="2" fill="#f1c40f" />
+    <circle cx="750" cy="290" r="2" fill="#f1c40f" />
+  </g>
+</svg>
