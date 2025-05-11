@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="600" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="sleepGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#3498db;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2980b9;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="eegGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2c3e50;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#34495e;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="analysisGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#9b59b6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8e44ad;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="dreamGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#1abc9c;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#16a085;stop-opacity:1" />
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="3" />
+      <feOffset dx="2" dy="2" result="offsetblur" />
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.5" />
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+    <style>
+      @keyframes brainwave {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-80px); }
+      }
+      @keyframes pulseGlow {
+        0% { filter: drop-shadow(0 0 2px rgba(52, 152, 219, 0.5)); }
+        50% { filter: drop-shadow(0 0 10px rgba(52, 152, 219, 0.8)); }
+        100% { filter: drop-shadow(0 0 2px rgba(52, 152, 219, 0.5)); }
+      }
+      @keyframes fadeIn {
+        0% { opacity: 0; }
+        100% { opacity: 1; }
+      }
+      @keyframes rotate {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+      @keyframes floatUp {
+        0% { transform: translateY(0); }
+        50% { transform: translateY(-10px); }
+        100% { transform: translateY(0); }
+      }
+      .brainwave { animation: brainwave 3s linear infinite; }
+      .pulse-glow { animation: pulseGlow 2s ease-in-out infinite; }
+      .fade-in { animation: fadeIn 1s ease-in-out; }
+      .rotate { animation: rotate 10s linear infinite; }
+      .float-up { animation: floatUp 4s ease-in-out infinite; }
+      .panel { filter: url(#shadow); }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="600" fill="#f0f3f6" />
+  
+  <!-- Title -->
+  <text x="400" y="40" font-family="Arial" font-size="24" font-weight="bold" text-anchor="middle" fill="#2c3e50">
+    Dream Data Collection and Analysis Workflow
+  </text>
+
+  <!-- Step 1: Sleep Monitoring -->
+  <g transform="translate(125, 150)" class="panel">
+    <rect x="-100" y="-70" width="200" height="140" rx="10" ry="10" fill="url(#sleepGradient)" />
+    <text x="0" y="-40" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle" fill="white">Step 1</text>
+    <text x="0" y="-20" font-family="Arial" font-size="14" text-anchor="middle" fill="white">Sleep Monitoring</text>
+    
+    <!-- Person sleeping -->
+    <g transform="translate(0, 20)" class="pulse-glow">
+      <rect x="-60" y="-15" width="120" height="50" rx="20" ry="20" fill="#ecf0f1" stroke="#7f8c8d" stroke-width="2" />
+      <circle cx="-40" cy="0" r="15" fill="#7f8c8d" />
+      <path d="M-35,-5 C-25,-15 -15,-5 -5,-15" stroke="#7f8c8d" stroke-width="2" fill="none" />
+    </g>
+    
+    <!-- EEG headband -->
+    <path d="M-40,-15 C-20,-30 20,-30 40,-15" stroke="#e74c3c" stroke-width="3" fill="none" />
+    <circle cx="-40" cy="-15" r="5" fill="#e74c3c" />
+    <circle cx="-20" cy="-25" r="5" fill="#e74c3c" />
+    <circle cx="0" cy="-28" r="5" fill="#e74c3c" />
+    <circle cx="20" cy="-25" r="5" fill="#e74c3c" />
+    <circle cx="40" cy="-15" r="5" fill="#e74c3c" />
+  </g>
+
+  <!-- Step 2: Data Collection -->
+  <g transform="translate(375, 150)" class="panel">
+    <rect x="-100" y="-70" width="200" height="140" rx="10" ry="10" fill="url(#eegGradient)" />
+    <text x="0" y="-40" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle" fill="white">Step 2</text>
+    <text x="0" y="-20" font-family="Arial" font-size="14" text-anchor="middle" fill="white">EEG Data Collection</text>
+    
+    <!-- EEG waves -->
+    <g transform="translate(0, 15)" class="brainwave">
+      <path d="M-80,0 C-70,20 -60,-20 -50,0 C-40,20 -30,-20 -20,0 C-10,20 0,-20 10,0 C20,20 30,-20 40,0 C50,20 60,-20 70,0 C80,20 90,-20 100,0" 
+            stroke="#3498db" stroke-width="3" fill="none" />
+      <path d="M-80,0 C-70,10 -60,-10 -50,0 C-40,10 -30,-10 -20,0 C-10,10 0,-10 10,0 C20,10 30,-10 40,0 C50,10 60,-10 70,0 C80,10 90,-10 100,0" 
+            stroke="#e74c3c" stroke-width="2" fill="none" />
+      <path d="M-80,0 C-70,5 -60,-5 -50,0 C-40,5 -30,-5 -20,0 C-10,5 0,-5 10,0 C20,5 30,-5 40,0 C50,5 60,-5 70,0 C80,5 90,-5 100,0" 
+            stroke="#2ecc71" stroke-width="2" fill="none" />
+    </g>
+    
+    <!-- Heart rate -->
+    <g transform="translate(0, 50)">
+      <text x="-50" y="0" font-family="Arial" font-size="10" fill="white">Heart Rate:</text>
+      <text x="10" y="0" font-family="Arial" font-size="10" fill="#e74c3c">72 BPM</text>
+    </g>
+  </g>
+
+  <!-- Step 3: AI Analysis -->
+  <g transform="translate(625, 150)" class="panel">
+    <rect x="-100" y="-70" width="200" height="140" rx="10" ry="10" fill="url(#analysisGradient)" />
+    <text x="0" y="-40" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle" fill="white">Step 3</text>
+    <text x="0" y="-20" font-family="Arial" font-size="14" text-anchor="middle" fill="white">AI Data Analysis</text>
+    
+    <!-- Neural Network -->
+    <g transform="translate(0, 20)" class="rotate">
+      <circle cx="0" cy="0" r="30" fill="none" stroke="white" stroke-width="1" stroke-dasharray="5,5" />
+      <circle cx="0" cy="0" r="50" fill="none" stroke="white" stroke-width="1" stroke-dasharray="5,5" />
+      
+      <!-- Nodes -->
+      <circle cx="-40" cy="-20" r="6" fill="#3498db" />
+      <circle cx="-30" cy="20" r="6" fill="#3498db" />
+      <circle cx="-20" cy="-40" r="6" fill="#3498db" />
+      
+      <circle cx="0" cy="-15" r="6" fill="#e74c3c" />
+      <circle cx="10" cy="15" r="6" fill="#e74c3c" />
+      <circle cx="-10" cy="5" r="6" fill="#e74c3c" />
+      
+      <circle cx="30" cy="-25" r="6" fill="#2ecc71" />
+      <circle cx="40" cy="5" r="6" fill="#2ecc71" />
+      <circle cx="20" cy="35" r="6" fill="#2ecc71" />
+      
+      <!-- Connections -->
+      <path d="M-40,-20 L0,-15 M-40,-20 L10,15 M-40,-20 L-10,5" stroke="white" stroke-width="1" />
+      <path d="M-30,20 L0,-15 M-30,20 L10,15 M-30,20 L-10,5" stroke="white" stroke-width="1" />
+      <path d="M-20,-40 L0,-15 M-20,-40 L10,15 M-20,-40 L-10,5" stroke="white" stroke-width="1" />
+      
+      <path d="M0,-15 L30,-25 M0,-15 L40,5 M0,-15 L20,35" stroke="white" stroke-width="1" />
+      <path d="M10,15 L30,-25 M10,15 L40,5 M10,15 L20,35" stroke="white" stroke-width="1" />
+      <path d="M-10,5 L30,-25 M-10,5 L40,5 M-10,5 L20,35" stroke="white" stroke-width="1" />
+    </g>
+  </g>
+
+  <!-- Step 4: Dream Content Extraction -->
+  <g transform="translate(400, 350)" class="panel">
+    <rect x="-350" y="-50" width="700" height="200" rx="10" ry="10" fill="url(#dreamGradient)" />
+    <text x="0" y="-20" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle" fill="white">Step 4: Dream Content Extraction</text>
+    
+    <!-- Dream Images -->
+    <g transform="translate(-250, 40)" class="fade-in float-up">
+      <circle cx="0" cy="0" r="35" fill="#ecf0f1" stroke="#16a085" stroke-width="2" />
+      <text x="0" y="0" font-family="Arial" font-size="10" text-anchor="middle" fill="#2c3e50">Beach Scene</text>
+      <path d="M-20,10 C-10,5 0,15 20,10" stroke="#3498db" stroke-width="2" fill="none" />
+      <path d="M-25,15 C0,20 15,15 25,15" stroke="#f39c12" stroke-width="2" fill="none" />
+    </g>
+    
+    <!-- Dream Text -->
+    <g transform="translate(-100, 40)" class="fade-in float-up">
+      <circle cx="0" cy="0" r="35" fill="#ecf0f1" stroke="#16a085" stroke-width="2" />
+      <text x="0" y="0" font-family="Arial" font-size="10" text-anchor="middle" fill="#2c3e50">Narrative</text>
+      <line x1="-15" y1="-10" x2="15" y2="-10" stroke="#2c3e50" stroke-width="1" />
+      <line x1="-20" y1="0" x2="20" y2="0" stroke="#2c3e50" stroke-width="1" />
+      <line x1="-10" y1="10" x2="10" y2="10" stroke="#2c3e50" stroke-width="1" />
+    </g>
+    
+    <!-- Dream Music -->
+    <g transform="translate(50, 40)" class="fade-in float-up">
+      <circle cx="0" cy="0" r="35" fill="#ecf0f1" stroke="#16a085" stroke-width="2" />
+      <text x="0" y="0" font-family="Arial" font-size="10" text-anchor="middle" fill="#2c3e50">Soundtrack</text>
+      <path d="M-15,-10 L-15,15 M-15,15 L-10,10 M-15,-10 C-10,-15 -5,-10 0,-5 M0,-5 L0,20 M0,20 C5,15 10,20 15,15" stroke="#2c3e50" stroke-width="1" fill="none" />
+    </g>
+    
+    <!-- Dream Emotions -->
+    <g transform="translate(200, 40)" class="fade-in float-up">
+      <circle cx="0" cy="0" r="35" fill="#ecf0f1" stroke="#16a085" stroke-width="2" />
+      <text x="0" y="0" font-family="Arial" font-size="10" text-anchor="middle" fill="#2c3e50">Emotions</text>
+      <circle cx="-10" cy="-10" r="8" fill="none" stroke="#2c3e50" stroke-width="1" />
+      <path d="M-15,-12 C-12,-7 -8,-7 -5,-12" stroke="#2c3e50" stroke-width="1" fill="none" />
+      <circle cx="10" cy="10" r="8" fill="none" stroke="#2c3e50" stroke-width="1" />
+      <path d="M5,12 C8,7 12,7 15,12" stroke="#2c3e50" stroke-width="1" fill="none" transform="rotate(180, 10, 10)" />
+    </g>
+  </g>
+
+  <!-- Step 5: Content Generation -->
+  <g transform="translate(400, 500)" class="panel">
+    <rect x="-350" y="-50" width="700" height="100" rx="10" ry="10" fill="#e74c3c" />
+    <text x="0" y="0" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle" fill="white">Step 5: AI Content Generation</text>
+    
+    <g transform="translate(-250, 0)">
+      <path d="M-20,-20 L20,20 M-20,20 L20,-20" stroke="white" stroke-width="2" />
+    </g>
+    
+    <g transform="translate(0, 0)">
+      <path d="M-20,0 L20,0 M0,-20 L0,20" stroke="white" stroke-width="2" />
+    </g>
+    
+    <g transform="translate(250, 0)">
+      <path d="M-15,0 A15,15 0 1,0 15,0 A15,15 0 1,0 -15,0" stroke="white" stroke-width="2" fill="none" />
+    </g>
+  </g>
+
+  <!-- Connection Arrows -->
+  <g>
+    <defs>
+      <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+        <polygon points="0 0, 10 3.5, 0 7" fill="#2c3e50" />
+      </marker>
+    </defs>
+    
+    <!-- Step 1 to Step 2 -->
+    <path d="M225,150 L275,150" stroke="#2c3e50" stroke-width="2" marker-end="url(#arrowhead)" />
+    
+    <!-- Step 2 to Step 3 -->
+    <path d="M475,150 L525,150" stroke="#2c3e50" stroke-width="2" marker-end="url(#arrowhead)" />
+    
+    <!-- Step 3 to Step 4 -->
+    <path d="M625,220 L625,260 L400,260 L400,300" stroke="#2c3e50" stroke-width="2" marker-end="url(#arrowhead)" />
+    
+    <!-- Step 4 to Step 5 -->
+    <path d="M400,450 L400,450" stroke="#2c3e50" stroke-width="2" marker-end="url(#arrowhead)" />
+  </g>
+
+  <!-- Sleep stages -->
+  <g transform="translate(125, 250)">
+    <text x="0" y="0" font-family="Arial" font-size="12" text-anchor="middle" fill="#2c3e50" font-weight="bold">Sleep Stages</text>
+    <rect x="-80" y="10" width="160" height="15" fill="white" stroke="#2c3e50" stroke-width="1" />
+    
+    <!-- Sleep stage progress bar -->
+    <rect x="-80" y="10" width="40" fill="#3498db" height="15" />
+    <rect x="-40" y="10" width="30" fill="#9b59b6" height="15" />
+    <rect x="-10" y="10" width="50" fill="#e74c3c" height="15" />
+    <rect x="40" y="10" width="40" fill="#9b59b6" height="15" />
+    
+    <text x="-60" y="20" font-family="Arial" font-size="8" text-anchor="middle" fill="white">N1</text>
+    <text x="-25" y="20" font-family="Arial" font-size="8" text-anchor="middle" fill="white">N2</text>
+    <text x="15" y="20" font-family="Arial" font-size="8" text-anchor="middle" fill="white">REM</text>
+    <text x="60" y="20" font-family="Arial" font-size="8" text-anchor="middle" fill="white">N2</text>
+  </g>
+
+  <!-- Additional Data points -->
+  <g transform="translate(375, 250)">
+    <text x="0" y="0" font-family="Arial" font-size="12" text-anchor="middle" fill="#2c3e50" font-weight="bold">Data Collection</text>
+    
+    <text x="-60" y="20" font-family="Arial" font-size="10" text-anchor="start" fill="#2c3e50">EEG:</text>
+    <text x="0" y="20" font-family="Arial" font-size="10" text-anchor="start" fill="#2c3e50">1000Hz, 2+ channels</text>
+    
+    <text x="-60" y="35" font-family="Arial" font-size="10" text-anchor="start" fill="#2c3e50">EOG:</text>
+    <text x="0" y="35" font-family="Arial" font-size="10" text-anchor="start" fill="#2c3e50">Eye movement tracking</text>
+    
+    <text x="-60" y="50" font-family="Arial" font-size="10" text-anchor="start" fill="#2c3e50">ECG:</text>
+    <text x="0" y="50" font-family="Arial" font-size="10" text-anchor="start" fill="#2c3e50">Heart rate, variability</text>
+    
+    <text x="-60" y="65" font-family="Arial" font-size="10" text-anchor="start" fill="#2c3e50">Respiratory:</text>
+    <text x="0" y="65" font-family="Arial" font-size="10" text-anchor="start" fill="#2c3e50">Breathing pattern</text>
+  </g>
+
+  <!-- AI Models -->
+  <g transform="translate(625, 250)">
+    <text x="0" y="0" font-family="Arial" font-size="12" text-anchor="middle" fill="#2c3e50" font-weight="bold">AI Models</text>
+    
+    <text x="-60" y="20" font-family="Arial" font-size="10" text-anchor="start" fill="#2c3e50">CNN-LSTM:</text>
+    <text x="20" y="20" font-family="Arial" font-size="10" text-anchor="start" fill="#2c3e50">Time series analysis</text>
+    
+    <text x="-60" y="35" font-family="Arial" font-size="10" text-anchor="start" fill="#2c3e50">StyleGAN3:</text>
+    <text x="20" y="35" font-family="Arial" font-size="10" text-anchor="start" fill="#2c3e50">Image generation</text>
+    
+    <text x="-60" y="50" font-family="Arial" font-size="10" text-anchor="start" fill="#2c3e50">GPT:</text>
+    <text x="20" y="50" font-family="Arial" font-size="10" text-anchor="start" fill="#2c3e50">Narrative creation</text>
+    
+    <text x="-60" y="65" font-family="Arial" font-size="10" text-anchor="start" fill="#2c3e50">MIDI-AI:</text>
+    <text x="20" y="65" font-family="Arial" font-size="10" text-anchor="start" fill="#2c3e50">Music composition</text>
+  </g>
+</svg>
