@@ -2,7 +2,7 @@
 
 A revolutionary platform for capturing, analyzing, transforming, and trading dream content using advanced biometric sensing, artificial intelligence, and blockchain technologies.
 
-![System Architecture](doc/images/system_architecture.svg)
+<img src="doc/images/system_architecture.svg" alt="System Architecture" width="800" />
 
 ## Overview
 
@@ -14,7 +14,7 @@ This innovative approach opens up an entirely new dimension of creativity, tappi
 
 ### 1. High-Resolution Sleep Data Collection
 
-![Sleep Data Workflow](doc/images/sleep_data_workflow.svg)
+<img src="doc/images/sleep_data_workflow.svg" alt="Sleep Data Workflow" width="700" />
 
 - **Advanced EEG Monitoring**: Captures brain activity at 1000Hz+ with 2+ channels
 - **Comprehensive Biometric Data**: Records eye movements (EOG), heart rate variability (ECG), and respiratory patterns
@@ -24,7 +24,7 @@ This innovative approach opens up an entirely new dimension of creativity, tappi
 
 ### 2. AI-Powered Dream Analysis & Content Generation
 
-![Content Generation](doc/images/content_generation.svg)
+<img src="doc/images/content_generation.svg" alt="Content Generation" width="700" />
 
 - **Hybrid Neural Networks**: CNN-LSTM architecture for temporal pattern recognition in brain activity
 - **Multi-Modal Content Generation**:
@@ -36,7 +36,7 @@ This innovative approach opens up an entirely new dimension of creativity, tappi
 
 ### 3. Blockchain-Based Copyright Management
 
-![NFT Marketplace](doc/images/nft_marketplace.svg)
+<img src="doc/images/nft_marketplace.svg" alt="NFT Marketplace" width="700" />
 
 - **NFT Tokenization**: Transforms dream content into unique digital assets
 - **Smart Contracts**: Automatically handles royalties and ownership rights
